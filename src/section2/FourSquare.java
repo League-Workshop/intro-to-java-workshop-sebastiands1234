@@ -33,13 +33,13 @@ public class FourSquare {
 		JOptionPane.showMessageDialog(null, "yay! you called the drawSquare() method!");
 		/* 3. Fill in the code to draw a square inside the method below. */
 		rob.turn(90);
-		rob.move(10);
+		rob.move(100);
 		rob.turn(90);
-		rob.move(10);
+		rob.move(100);
 		rob.turn(90);
-		rob.move(10);
+		rob.move(100);
 		rob.turn(90);
-		rob.move(10);
+		rob.move(100);
 	}
 
 	public static void main(String[] args) {
