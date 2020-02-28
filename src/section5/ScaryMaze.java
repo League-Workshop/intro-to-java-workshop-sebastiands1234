@@ -35,7 +35,7 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		addMouseMotionListener(this);
 	}
 
-	@Override
+	
 	public void mouseMoved(MouseEvent e) {
 		int mouseX = e.getX();
 		int mouseY = e.getY();
@@ -67,22 +67,14 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 
 	private void scare() {
 		System.out.println("BOO!");
-		//9. Find a scary sound and put it in the section5 package where you put your maze picture. You can find a sound on freesound.org. Log in as leagueofamazing/code4life.
-		
-		//10. Use the code below to load your sound.  Change the file name to match the name of your sound file.  
-		//AudioClip sound = JApplet.newAudioClip(getClass().getResource("standardScarySound.wav"));
-		
-		//11. Play the scary sound. Hint: type "sound" and then a period.		
-		
-		//12. Drop an image into your section5 package, and use the showScaryImage method to scare your victim!
 		
 	}
 
-	private void showScaryImage(String imageName) {
+	private void showScaryImage(String ghost) {
 		try {
-			maze = ImageIO.read(getClass().getResource(imageName));
+			maze = ImageIO.read(getClass().getResource(ghost));
 		} catch (Exception e) {
-			System.err.println("Couldn't find this image: " + imageName);
+			System.err.println("Couldn't find this image: " + ghost);
 		}
 		repaint();
 	}
@@ -91,7 +83,7 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		SwingUtilities.invokeLater(new ScaryMaze());
 	}
 
-	@Override
+	
 	public void run() {
 		JFrame frame = new JFrame("Scary Maze");
 		frame.add(this);
@@ -102,15 +94,26 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		frame.setVisible(true);
 	}
 
-	@Override
+
 	public void paintComponent(Graphics g) {
 		g.drawImage(maze, 0, 0, null);
 	}
 
-	@Override
+
 	public void mouseDragged(MouseEvent e) {}
+
 
 }
 
+		//9. Find a scary sound and put it in the section5 package where you put your maze picture. You can find a sound on freesound.org. Log in as leagueofamazing/code4life.
+		
+		//10. Use the code below to load your sound.  Change the file name to match the name of your sound file.  
+		//AudioClip sound = JApplet.newAudioClip(getClass().getResource("standardScarySound.wav"));
+		
+		//11. Play the scary sound. Hint: type "sound" and then a period.		
+		
+		//12. Drop an image into your section5 package, and use the showScaryImage method to scare your victim!
+		
+	
 
 
